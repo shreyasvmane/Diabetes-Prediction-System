@@ -21,3 +21,8 @@ The given system also creates an overall report of prediction which user can sav
 - CSS3 and Bootstrap4
 - Numpy, Pandas, Sklearn Libraries
 
+### System Screenshots :  
+#### Index Page : Here, user can fill the required details which are used as a features for prediction.   
+![Index Page](https://github.com/shreyasvmane/Diabetes-Prediction-System/blob/master/index%20page.png)  
+#### Prediction Page : Here,The system gives a prediction result and creates a simple report in tabular format.  
+![Diabetes Page](https://github.com/shreyasvmane/Diabetes-Prediction-System/blob/master/Prediction%20page.png)
