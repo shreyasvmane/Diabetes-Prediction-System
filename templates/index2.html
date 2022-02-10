@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> FLASK APP </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">    
+</head>
+
+<body>
+    <div class="container">
+       <div class="page-header text-center">
+            <h3>Diabetes Detection System</h3>      
+      </div>
+     
+
+       <form class="form-horizontal" action="{{ url_for('predict')}}" method="post">
+        <div class="text-center">
+          <h4><b> Fill Details <b></h4> 
+        </div>
+        <br><br>
+        
+         <div class="form-group">
+          <label class="control-label col-sm-2" for="Age">Patient Name :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="text" placeholder="Enter Full Name" name="Name" required>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="Age">Patient Age :</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="Age" placeholder="Enter Age" name="Age" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="Age">Patient Gender :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="text" placeholder="Male/Female" name="Gender" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="Glucose">Glucose Level:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="Glucose" placeholder="Enter Glucose Level (mg/dL)" name="Glucose" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="BloodPressure">Blood Pressure:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="BloodPressure" placeholder="Enter Blood Pressure (mmHg)" 
+            name="BloodPressure" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="Insulin">Insulin Level:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="Insulin" placeholder="Enter Blood Sugar Level" name="Insulin" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="BMI">Body Mass Index:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="BMI" placeholder="Enter Body Mass Index" name="BMI" required>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Predict Now </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+      <div class="footer-copyright text-center py-3">© 2022 Copyright:
+        <a href="https://github.com/shreyasvmane"> Shreyas Mane</a>
+      </div>
+    </footer>
+
+</body>
+</html>
+
+
