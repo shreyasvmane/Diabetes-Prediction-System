@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> FLASK APP </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">    
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header text-center">
+            <h3>Diabetes Detection System</h3>      
+        </div>
+            <div class="text-center">
+              <h3><b> Prediction Result</b></h3> <br>
+
+               <!--  <form action="{{ url_for('predict')}}" method="post"> -->
+
+                {% if prediction==1 %}    
+                <h4><p class="text-danger">Patient has Diabetes!  </p></h4>
+               
+                {% else %}
+                <h4><p class="text-primary">Patient has no Diabetes!</p></h4><br>
+               
+                {% endif %}
+
+
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td><b> Patient Name </b></td>
+                      <td>{{Name}}</td>
+                    </tr>
+
+                    <tr>
+                      <td><b> Patient Age </b></td>
+                      <td> {{Age}} Yrs./{{Gender}}</td>
+                    </tr>
+
+
+                    <tr>
+                      <td><b> Blood Pressure </b></td>
+                      <td>{{BloodPressure}} </td>
+                    </tr>
+
+                     <tr>
+                      <td><b> Glucose Level </b></td>
+                      <td>{{Glucose}} </td>
+                    </tr>
+
+                    <tr>
+                      <td><b> Insuline Level </b></td>
+                      <td>{{Insulin}}</td>
+                    </tr>
+
+                    <tr>
+                      <td><b> Body Mass Index </b></td>
+                      <td>{{BMI}} </td>
+                    </tr>
+
+                     <tr>
+                      <td><b> Diabetes Status </b></td>
+                      <td>  {% if prediction==1 %} <p class="text-danger"><b>Postive</b></p>
+                            {% else %} <p class="text-danger"><b>Negative</b></p>
+                            {% endif %} 
+                      </td>
+                    </tr>
+       
+              </tbody>
+
+            </table>
+                <button  onclick="window.print()">Print Report</button>
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+      <div class="footer-copyright text-center py-3">© 2022 Copyright:
+        <a href="https://github.com/shreyasvmane"> Shreyas Mane</a>
+      </div>
+    </footer>
+</body>
+</html>
